@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: kestrel-warehouse
+Version: 0.1.0
+Requires-Python: >=3.11
+Requires-Dist: mcp[cli]
+Requires-Dist: pydantic>=2.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"

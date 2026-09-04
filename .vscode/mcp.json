@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "kestrel-warehouse": {
+      "command": "python",
+      "args": ["-m", "warehouse.server"],
+      "cwd": "${workspaceFolder}/src",
+      "env": {
+        "WAREHOUSE_SITE": "LEEDS-01"
+      }
+    }
+  }
+}

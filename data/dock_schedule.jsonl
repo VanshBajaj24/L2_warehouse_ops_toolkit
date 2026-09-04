@@ -1,0 +1,18 @@
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "06:00", "status": "available", "carrier": null}
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "08:00", "status": "booked", "carrier": "Northbound Freight"}
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "10:00", "status": "available", "carrier": null}
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "12:00", "status": "booked", "carrier": "Northbound Freight"}
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "14:00", "status": "available", "carrier": null}
+{"site": "LEEDS-01", "date": "2026-04-08", "slot": "16:00", "status": "available", "carrier": null}
+{"site": "READING-02", "date": "2026-04-08", "slot": "06:00", "status": "booked", "carrier": "Northbound Freight"}
+{"site": "READING-02", "date": "2026-04-08", "slot": "08:00", "status": "available", "carrier": null}
+{"site": "READING-02", "date": "2026-04-08", "slot": "10:00", "status": "available", "carrier": null}
+{"site": "READING-02", "date": "2026-04-08", "slot": "12:00", "status": "available", "carrier": null}
+{"site": "READING-02", "date": "2026-04-08", "slot": "14:00", "status": "booked", "carrier": "Northbound Freight"}
+{"site": "READING-02", "date": "2026-04-08", "slot": "16:00", "status": "available", "carrier": null}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "06:00", "status": "available", "carrier": null}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "08:00", "status": "available", "carrier": null}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "10:00", "status": "booked", "carrier": "Northbound Freight"}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "12:00", "status": "available", "carrier": null}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "14:00", "status": "available", "carrier": null}
+{"site": "GLASGOW-03", "date": "2026-04-08", "slot": "16:00", "status": "available", "carrier": null}

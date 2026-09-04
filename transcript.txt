@@ -1,0 +1,97 @@
+WAREHOUSE MCP CHAT TRANSCRIPT
+
+Date: 2026-09-04
+Workspace: L2_Case04_Warehouse_Ops_MCP_Toolkit
+Configured site: LEEDS-01
+
+USER: hi
+ASSISTANT: Hi! How can I help with your warehouse toolkit today?
+
+USER: which tools are being used in this conversation
+ASSISTANT: No tools had been invoked at that point. The workspace had one configured MCP server, kestrel-warehouse, exposing warehouse operations including get_stock, search_stock, adjust_stock_count, move_stock, list_dock_slots, book_dock_slot, cancel_dock_booking, raise_exception, list_open_exceptions, close_exception, and confirm_operation.
+
+USER: tell the mcp server being used
+ASSISTANT: The MCP server is kestrel-warehouse. It runs python -m warehouse.server from the src directory with WAREHOUSE_SITE set to LEEDS-01.
+
+USER: How much pallet wrap do we have in stock?
+TOOL: search_stock(query="pallet wrap")
+RESULT:
+- SKU-8801, Pallet wrap, 500mm clear, bin A-12-3, quantity 240 each
+- SKU-8802, Pallet wrap, 500mm black, bin A-12-4, quantity 180 each
+Total: 420 each.
+
+USER: Can you check how many air pillow void fill boxes we have?
+TOOL: search_stock(query="air pillow void fill boxes")
+RESULT: No matches.
+TOOL: search_stock(query="air pillow")
+RESULT:
+- SKU-8811, Void fill, air pillow, bin A-19-6, quantity 420 boxes
+
+USER: What's the stock level for SKU-8815?
+TOOL: get_stock(sku="SKU-8815")
+RESULT:
+- SKU-8815, Pallet, standard UK, bin YARD-1, quantity 55 each
+
+USER: Do we have any 600mm shrink film?
+TOOL: search_stock(query="600mm shrink film")
+RESULT: No matches.
+TOOL: search_stock(query="shrink film")
+RESULT: No matches.
+OUTCOME: No 600mm shrink film recorded at LEEDS-01.
+
+USER: What dock slots are available on April 8th?
+TOOL: list_dock_slots(date="2026-04-08", status="available")
+RESULT: Available slots at LEEDS-01: 06:00, 10:00, 14:00, 16:00.
+
+USER: Book the 10am slot on April 8th for ABC Logistics
+TOOL: book_dock_slot(date="2026-04-08", slot="10:00", carrier="ABC Logistics")
+RESULT: Preview created. Confirmation ID: CONF-2a979d7d.
+
+USER: confirm
+TOOL: confirm_operation(confirmation_id="CONF-2a979d7d")
+RESULT: Dock slot booked successfully for ABC Logistics at 10:00 on 2026-04-08 at LEEDS-01.
+
+USER: Book the 8am slot on April 8th for Quick Delivery
+TOOL: book_dock_slot(date="2026-04-08", slot="08:00", carrier="Quick Delivery")
+RESULT: Error SLOT_ALREADY_BOOKED. The slot was booked by Northbound Freight.
+OUTCOME: Quick Delivery was not booked.
+
+USER: The count for SKU-8801 is wrong, it should be 235. Five units were damaged.
+TOOL: adjust_stock_count(sku="SKU-8801", new_quantity=235, reason="Five units were damaged")
+RESULT: Preview created. Confirmation ID: CONF-29a119b8. The adjustment is irreversible.
+
+USER: confirm
+TOOL: confirm_operation(confirmation_id="CONF-29a119b8")
+RESULT: Stock count adjusted from 240 to 235 each for SKU-8801. The adjustment will appear in the month-end count.
+
+USER: How many corner protectors do we have?
+TOOL: search_stock(query="corner protectors")
+RESULT: No matches.
+TOOL: search_stock(query="corner")
+RESULT: No matches.
+OUTCOME: No corner protectors recorded at LEEDS-01.
+
+USER: Book the 9:30 slot on April 8th for a delivery
+ASSISTANT: Which carrier should I book for the 09:30 slot on April 8, 2026?
+
+USER: I found three rolls of pallet wrap that are crushed, need to log it
+ASSISTANT: Which pallet wrap SKU are the three crushed rolls from: SKU-8801 (500mm clear) or SKU-8802 (500mm black)?
+
+USER: black
+TOOL: raise_exception(sku="SKU-8802", category="damaged", description="Three rolls of 500mm black pallet wrap were found crushed.")
+RESULT: Preview created. Confirmation ID: CONF-4e7d2a30.
+
+USER: confirm
+TOOL: confirm_operation(confirmation_id="CONF-4e7d2a30")
+RESULT: Exception raised successfully. Exception ID: EXC-20260904-001. SKU-8802. Category: damaged. Status: open.
+
+USER: The carrier for the 8am slot on April 8th is a no-show, cancel it
+TOOL: cancel_dock_booking(date="2026-04-08", slot="08:00")
+RESULT: Preview created to cancel Northbound Freight's booking. Confirmation ID: CONF-e9f4f9b1.
+
+USER: confirm
+TOOL: confirm_operation(confirmation_id="CONF-e9f4f9b1")
+RESULT: Booking cancelled successfully. The 08:00 slot on 2026-04-08 is now available.
+
+USER: can I get transcript of this chat in a file
+ASSISTANT: Creating this transcript file.

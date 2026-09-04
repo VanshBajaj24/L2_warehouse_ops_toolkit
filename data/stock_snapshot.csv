@@ -1,0 +1,17 @@
+sku,description,site,bin,quantity,unit
+SKU-8801,"Pallet wrap, 500mm clear",LEEDS-01,A-12-3,240,each
+SKU-8802,"Pallet wrap, 500mm black",LEEDS-01,A-12-4,180,each
+SKU-8803,"Strapping band, 12mm",LEEDS-01,A-14-1,95,roll
+SKU-8804,"Strapping band, 16mm",LEEDS-01,A-14-2,60,roll
+SKU-8805,"Corner protector, 50mm",READING-02,B-03-7,1200,each
+SKU-8806,"Corner protector, 75mm",READING-02,B-03-8,800,each
+SKU-8807,"Edge board, 1200mm",READING-02,B-05-2,340,each
+SKU-8808,"Shrink film, 400mm",GLASGOW-03,C-08-1,150,roll
+SKU-8809,"Shrink film, 600mm",GLASGOW-03,C-08-2,0,roll
+SKU-8810,"Void fill, paper",GLASGOW-03,C-11-4,75,bale
+SKU-8811,"Void fill, air pillow",LEEDS-01,A-19-6,420,box
+SKU-8812,"Tape, 48mm clear",READING-02,B-09-3,640,roll
+SKU-8813,"Tape, 48mm printed",READING-02,B-09-4,90,roll
+SKU-8814,"Label roll, 100x150",GLASGOW-03,C-02-5,210,roll
+SKU-8815,"Pallet, standard UK",LEEDS-01,YARD-1,55,each
+SKU-8816,"Pallet, euro",LEEDS-01,YARD-2,12,each
